@@ -17,12 +17,12 @@ function Home() {
     var check_in_time = document.getElementById('check_in_time').value;
     var check_in_date = document.getElementById('check_in_date').value;
 
-    var check_in_time_and_date = check_in_time + " " + check_in_date;
+    var check_in_time_and_date = check_in_date + " " + check_in_time;
 
     var check_out_time = document.getElementById('check_out_time').value;
     var check_out_date = document.getElementById('check_out_date').value;
 
-    var check_out_time_and_date = check_out_time + " " + check_out_date;
+    var check_out_time_and_date = check_out_date + " " + check_out_time;
 
     $.ajax({
       url: "https://wodrsbattlegame.000webhostapp.com/backend_api_for_my_other_project/parking_app_api/enter_details.php",

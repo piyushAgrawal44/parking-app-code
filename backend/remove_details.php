@@ -18,7 +18,7 @@
         include('./config.php');;
         
         $id=check_input($_POST['id']);
-        $stmt="UPDATE `garage_database` SET deleted_at=? WHERE id=(?)";
+        $stmt="UPDATE `garage_table` SET deleted_at=? WHERE id=(?)";
         $sql=mysqli_prepare($conn, $stmt);
 
         //binding the parameters to prepard statement
@@ -37,7 +37,7 @@
         else
         {
            
-            $data = mysqli_error($conn);
+            $data ="Something went wrong.";
             // header('Content-Type: application/json; charset=utf-8');
              mysqli_stmt_close($sql);
              mysqli_close($conn);

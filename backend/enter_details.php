@@ -41,7 +41,7 @@
         else
         {
            
-            $data = mysqli_error($conn);
+            $data = "Something went wrong.";
             // header('Content-Type: application/json; charset=utf-8');
              mysqli_stmt_close($sql);
              mysqli_close($conn);

@@ -6,7 +6,7 @@
     if(isset($_POST['row_id']) && !empty($_POST['row_id']) && isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['nick_name']) && !empty($_POST['nick_name']) && isset($_POST['school_name']) && !empty($_POST['school_name']))
     {
         include('./config.php');
-        $stmt="UPDATE `garage_database` SET vehicle_number=?,driver_name=?,check_in_time_and_date=?,check_out_time_and_date=? WHERE id=(?)";
+        $stmt="UPDATE `garage_table` SET vehicle_number=?,driver_name=?,check_in_time_and_date=?,check_out_time_and_date=? WHERE id=(?)";
         $sql=mysqli_prepare($conn, $stmt);
 
         //binding the parameters to prepard statement
@@ -30,7 +30,7 @@
         } 
         else
         {    
-            $data = mysqli_error($conn);
+            $data = "Something went wrong.";
             // header('Content-Type: application/json; charset=utf-8');
             mysqli_stmt_close($sql);
             mysqli_close($conn);
@@ -52,9 +52,6 @@
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         $data=ucwords($data);
-        // if ($data=="" || $data==null) {
-        //     $data="Not Available";
-        // }
         return $data;
     }
 ?>
