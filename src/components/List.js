@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import $ from "jquery";
-// import "./css/list.css";
+
 function List() {
     
     function removeDetails(id){
@@ -8,7 +8,7 @@ function List() {
             var answer=window.confirm("Are you sure !!");
             if (answer) {
                 $.ajax({
-                    url: "https://unique-facts.000webhostapp.com/garage_api/remove_details.php",
+                    url: "https://wodrsbattlegame.000webhostapp.com/backend_api_for_my_other_project/parking_app_api/remove_details.php",
                     type: 'POST',
                     data: {
                         'id': id,
@@ -19,7 +19,7 @@ function List() {
                         setdetails(details => details.filter((x)=>{
                             return x.id !== id;
                         }));
-                        // youcan also this as a challenge without page reload data removal...
+                        // you can also this as a challenge without page reload data removal...
                         
                         alert("Details removed successfully");
                         console.log(data);
@@ -65,7 +65,7 @@ function List() {
         var check_in_time_and_date=document.getElementById('check_in_time_and_date').value;
         var check_out_time_and_date=document.getElementById('check_out_time_and_date').value;
         $.ajax({
-            url: "https://unique-facts.000webhostapp.com/garage_api/update_details.php",
+            url: "https://wodrsbattlegame.000webhostapp.com/backend_api_for_my_other_project/parking_app_api/update_details.php",
             type: 'POST',
             data: {
                 'row_id':myId,
@@ -103,7 +103,7 @@ function List() {
     }, []);
 
     async function fetchRepo() {
-        await fetch("https://unique-facts.000webhostapp.com/garage_api/get_details.php").then(res => res.json()).then(data => {
+        await fetch("https://wodrsbattlegame.000webhostapp.com/backend_api_for_my_other_project/parking_app_api/get_details.php").then(res => res.json()).then(data => {
             setdetails(data);
         });
     }

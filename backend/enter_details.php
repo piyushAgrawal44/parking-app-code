@@ -18,14 +18,14 @@
     && !empty($_POST['driver_name']) && isset($_POST['check_in_time_and_date']) && !empty($_POST['check_in_time_and_date'])
     && isset($_POST['check_out_time_and_date']) && !empty($_POST['check_out_time_and_date']))
     {
-        include('../crm/backend/config.php');
+        include('./config.php');
         
         $vehicle_number=check_input($_POST['vehicle_number']);
         $driver_name=check_input($_POST['driver_name']);
         $check_in_time_and_date=check_input($_POST["check_in_time_and_date"]);
         $check_out_time_and_date=check_input($_POST["check_out_time_and_date"]);
        
-        $stmt="INSERT INTO `garage_database` (vehicle_number,driver_name,check_in_time_and_date,check_out_time_and_date) VALUES (?,?,?,?)";
+        $stmt="INSERT INTO `garage_table` (vehicle_number,driver_name,check_in_time_and_date,check_out_time_and_date) VALUES (?,?,?,?)";
         $sql = mysqli_prepare($conn, $stmt);
         mysqli_stmt_bind_param($sql, 'ssss', $vehicle_number,$driver_name,$check_in_time_and_date,$check_out_time_and_date);
         $result=mysqli_stmt_execute($sql);

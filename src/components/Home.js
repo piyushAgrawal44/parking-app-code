@@ -3,43 +3,8 @@ import React from 'react';
 // var BarChart = require("react-chartjs").Bar;
 
 function Home() {
-  
 
-  // var chartData={
-  //   labels: ['Monday', 'Tuesday', 'Wednessday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-  //   datasets: [{
-  //       label: 'Number Vehicle Every Day',
-  //       data: [12, 19, 3, 5, 2, 3, 8],
-  //       backgroundColor: [
-  //         'rgba(255, 99, 132, 0.2)',
-  //         'rgba(255, 159, 64, 0.2)',
-  //         'rgba(255, 205, 86, 0.2)',
-  //         'rgba(75, 192, 192, 0.2)',
-  //         'rgba(54, 162, 235, 0.2)',
-  //         'rgba(153, 102, 255, 0.2)',
-  //         'rgba(201, 203, 207, 0.2)'
-  //       ],
-  //       borderColor: [
-  //         'rgb(255, 99, 132)',
-  //         'rgb(255, 159, 64)',
-  //         'rgb(255, 205, 86)',
-  //         'rgb(75, 192, 192)',
-  //         'rgb(54, 162, 235)',
-  //         'rgb(153, 102, 255)',
-  //         'rgb(201, 203, 207)'
-  //       ],
-  //       // borderWidth: 1
-  //   }]};
-    
-  //   var chartOptions={
-  //     scales: {
-  //       y: {
-  //           beginAtZero: true
-  //       }
-  //   }
-  //   }
   setTimeout(function () {
-    // $('#myTable').DataTable();
     document.getElementById('home_link').classList.add('active');
     document.getElementById('list_link').classList.remove('active');
   }, 500);
@@ -60,7 +25,7 @@ function Home() {
     var check_out_time_and_date = check_out_time + " " + check_out_date;
 
     $.ajax({
-      url: "https://unique-facts.000webhostapp.com/garage_api/enter_details.php",
+      url: "https://wodrsbattlegame.000webhostapp.com/backend_api_for_my_other_project/parking_app_api/enter_details.php",
       type: 'POST',
       data: {
         'vehicle_number': vehicle_number,
@@ -88,26 +53,8 @@ function Home() {
         alert("Sorry some technical issue.");
       }
     });
-
-
   }
 
-  // const [details, setdetails] = useState([]);
-    
-    
-  //   useEffect(() => {
-  //       fetchRepo();
-  //   }, []);
-
-  //   async function fetchRepo() {
-  //       await fetch("https://unique-facts.000webhostapp.com/garage_api/get_details.php").then(res => res.json()).then(data => {
-  //         setdetails(data);
-  //       });
-  //   }
-    // var today= new Date();
-
-
-    // fetchRepo();
   return (
     <div className="container-fluid">
       <div className="">
@@ -160,13 +107,6 @@ function Home() {
             </form>
           </div>
         </div>
-        {/* <div className="col-12 col-md-6 padding_10px">
-            <h4 className="text-center">This Week</h4>
-            
-            <div className="manage_overflow">
-              <BarChart data={chartData} options={chartOptions} className="" width="600" height="350"/>
-            </div>
-        </div> */}
       </div>
     </div>
 

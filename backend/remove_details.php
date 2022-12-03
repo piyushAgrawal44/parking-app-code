@@ -15,7 +15,7 @@
         
     if(isset($_POST['id']) && !empty($_POST['id']))
     {
-        include('../crm/backend/config.php');
+        include('./config.php');;
         
         $id=check_input($_POST['id']);
         $stmt="UPDATE `garage_database` SET deleted_at=? WHERE id=(?)";

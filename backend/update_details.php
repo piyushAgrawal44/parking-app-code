@@ -5,7 +5,7 @@
       
     if(isset($_POST['row_id']) && !empty($_POST['row_id']) && isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['nick_name']) && !empty($_POST['nick_name']) && isset($_POST['school_name']) && !empty($_POST['school_name']))
     {
-        include('../crm/backend/config.php'); 
+        include('./config.php');
         $stmt="UPDATE `garage_database` SET vehicle_number=?,driver_name=?,check_in_time_and_date=?,check_out_time_and_date=? WHERE id=(?)";
         $sql=mysqli_prepare($conn, $stmt);
 

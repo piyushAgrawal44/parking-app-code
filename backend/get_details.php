@@ -2,7 +2,7 @@
         header("Access-Control-Allow-Origin: *");
         header('Access-Control-Allow-Credentials: true');
         header('Access-Control-Max-Age: 86400');      
-        include('../crm/backend/config.php');                    
+        include('./config.php');                   
         $stmt="SELECT id,vehicle_number,driver_name,check_in_time_and_date,check_out_time_and_date
         FROM `garage_database` WHERE deleted_at IS NULL";
         $sql=mysqli_prepare($conn, $stmt);
